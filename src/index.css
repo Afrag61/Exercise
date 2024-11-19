@@ -1,7 +1,11 @@
+body{
+    background-color: black;
+}
+
 h1{
     display: flex;
     flex-flow: column nowrap;
     align-self: center;
     justify-self: center;
-    color: #60009c;
+    color: #00d5fb;
 }
