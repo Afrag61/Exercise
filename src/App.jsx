@@ -2,22 +2,15 @@ import React from 'react';
 
 // don't change the Component name "App"
 export default function App() {
-  let [theColor,setColor] = React.useState("white");
-
-  function handleChange (){
-    if(theColor === "white"){
-      setColor("red")
-    }else{
-      setColor("white")
-    }
-  }
-
+    const clickHandler = () => {
+        console.log('Clicked!');
+    };
+    
     return (
-        <div>
-            <p style={{
-              color: theColor
-            }}>Style me!</p>
-            <button onClick={() => handleChange()}>Toggle style</button>
-        </div>
+        <Div>
+          <h2>You're logged in!</h2>
+          <p>Welcome to your user profile!</p>
+          <button onclick={clickHandler}>Click me!</button>
+        </Div>
     );
 }
