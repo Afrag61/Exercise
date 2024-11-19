@@ -1,8 +1,7 @@
-body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 3rem;
-    background-color: #2d2c2c;
-    color: #959090;
-    text-align: center;
+h1{
+    display: flex;
+    flex-flow: column nowrap;
+    align-self: center;
+    justify-self: center;
+    color: #60009c;
 }
