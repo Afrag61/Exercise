@@ -1,11 +1,11 @@
-import Input from './Input';
+import Input from './components/Input.jsx';
 
 export const userData = {
   name: '',
   email: '',
 };
 
-export function App() {
+export default function App() {
   function handleSaveData() {
     userData.name = 'TODO: Set to actual entered value';
     userData.email = 'TODO: Set to actual entered value';
