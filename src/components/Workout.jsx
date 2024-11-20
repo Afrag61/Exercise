@@ -1,11 +1,19 @@
+import React from "react";
+
 export default function Workout({ title, description, time, onComplete }) {
+    let timer = React.useRef()
+
     function handleStartWorkout() {
       // Todo: Start timer
+      timer = setTimeout(() => {
+        onComplete(title)
+      }, time)
     }
   
     function handleStopWorkout() {
       // Todo: Stop timer
-      onComplete();
+      clearTimeout(timer)
+      onComplete(title);
     }
   
     return (
