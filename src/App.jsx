@@ -1,34 +1,28 @@
-import React from 'react';
+import React from "react";
 
-import Input from './components/Input.jsx';
+import ico from "./assets/react.svg"
 
-export const userData = {
-  name: '',
-  email: '',
-};
+function App(){
+  const [isClicked, setIsClicked] = React.useState(false)
 
-export default function App() {
-  const name = React.useRef();
-  const email = React.useRef();
-  
-  function handleSaveData() {
-    const enteredName = name.current.value;
-    const enteredEmail = email.current.value;
+  const styleClass = 'fast'
 
-    userData.name = enteredName;
-    userData.email = enteredEmail;
-
-    console.log(userData);
+  function handleClick(){
+    {isClicked ? setIsClicked(false) : setIsClicked(true)}
   }
 
-  return (
-    <div id="app">
-      <Input ref={name} type="text" label="Your Name" />
-      <Input ref={email} type="email" label="Your E-Mail" />
-      <p id="actions">
-        <button className='' onClick={handleSaveData}>Save Data</button>
-      </p>
+return(
+  <div>
+    <header>
+      <div>
+        <h1>Ready to Code</h1>
+      </div>
+  </header>
+    <div>
+      <img className={`img ${isClicked ? styleClass : undefined}`} src={ico} alt="React" onClick={handleClick}/>
     </div>
-  );
+  </div>
+)
 }
 
+export default App;
