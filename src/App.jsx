@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Input from './components/Input.jsx';
 
 export const userData = {
@@ -6,19 +8,25 @@ export const userData = {
 };
 
 export default function App() {
+  const name = React.useRef();
+  const email = React.useRef();
+  
   function handleSaveData() {
-    userData.name = 'TODO: Set to actual entered value';
-    userData.email = 'TODO: Set to actual entered value';
+    const enteredName = name.current.value;
+    const enteredEmail = email.current.value;
+
+    userData.name = enteredName;
+    userData.email = enteredEmail;
 
     console.log(userData);
   }
 
   return (
     <div id="app">
-      <Input type="text" label="Your Name" />
-      <Input type="email" label="Your E-Mail" />
+      <Input ref={name} type="text" label="Your Name" />
+      <Input ref={email} type="email" label="Your E-Mail" />
       <p id="actions">
-        <button onClick={handleSaveData}>Save Data</button>
+        <button className='' onClick={handleSaveData}>Save Data</button>
       </p>
     </div>
   );
