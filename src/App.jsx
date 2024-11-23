@@ -1,20 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Header from "./components/Header";
 import ReactIcon from "./components/ReactIcon";
 
-function App(){
-  const [isClicked, setIsClicked] = React.useState(false)
+const tempArr = Array.apply(null, Array(1)).map(() => {});
 
-  function handleClick(){
-    {isClicked ? setIsClicked(false) : setIsClicked(true)}
-}
+function App(){
+  const [selectedIconIndex, setSelectedIconIndex] = useState([])
+
+  function handleClick(index){
+    if(selectedIconIndex.includes(index)) {
+      setSelectedIconIndex(prev => prev.filter(item => item !== index));
+      // setSelectedIconIndex(selectedIconIndex.filter(item => item !== index));
+    } else {
+      setSelectedIconIndex([...selectedIconIndex, index])
+      // setSelectedIconIndex(prev => [...prev, index])
+    }
+  }
+
 
   return(
     <>
       <Header />
-      <ReactIcon Click={isClicked} onClick={handleClick} />
+      <div>
+      {tempArr.map((_, index) => {
+        return <ReactIcon isSelected={selectedIconIndex.includes(index)} onClick={() => handleClick(index)} />
+      })}
+      </div>
     </>
-  )}
+  )
+}
 
 export default App;

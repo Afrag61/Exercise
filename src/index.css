@@ -26,8 +26,8 @@ h1{
 
 .icontainer{
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
   border: 1px solid #00d8ff;
   border-radius: 8px;
   border-top: 0px;

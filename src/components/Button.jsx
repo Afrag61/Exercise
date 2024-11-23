@@ -1,5 +1,5 @@
-export default function Button({onClick, Click}){
+export default function Button({onClick, isSelected}){
     return(
-        <button onClick={onClick}>{Click ? 'Normal' : 'Faster'}</button>
+        <button onClick={onClick}>{isSelected ? 'Normal' : 'Faster'}</button>
     )
 }
