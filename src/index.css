@@ -9,7 +9,8 @@ body {
   font-family: "Silkscreen", sans-serif;
   font-weight: 700;
   font-style: normal;
-  background: linear-gradient(#000000,#000000,#101116,#171a1b);
+  /* background: linear-gradient(#000000,#000000,#101116,#171a1b); */
+  background-color: #000000;
   color: #00d8ff;
 }
 
@@ -67,9 +68,9 @@ button{
   font-size: large;
   margin-top: 30px;
   margin-bottom: 30px;
-  color: black;
-  background-color: #00d8ff;
-  border: 1px solid black;
+  color: #00d8ff;
+  background-color: #000000;
+  border: 1px solid #00d8ff;
   border-radius: 8px;
   height: 35px;
   width: 100px;
@@ -77,5 +78,6 @@ button{
 
 button:hover{
   cursor: pointer;
-  background-color: #00a1bd;
+  background-color: #00d8ff;
+  color: #000000;
 }
