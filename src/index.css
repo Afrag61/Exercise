@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lacquer&family=Lobster&family=Silkscreen:wght@400;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,20 +6,28 @@
 
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background: linear-gradient(#000000,#000000,#101116,#171a1b);
   color: #00d8ff;
 }
 
 h1{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 6px;
+    margin-bottom: 0px;
     border: 1px solid #00d8ff;
     padding-top: 25px;
     padding-bottom: 25px;
     border-radius: 8px;
+}
+
+.icontainer{
+  border: 1px solid #00d8ff;
+  border-radius: 8px;
+  border-top: 0px;
+  padding-top: 1px;
 }
 
 .img{

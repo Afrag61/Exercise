@@ -1,28 +1,16 @@
 import React from "react";
 
-import ico from "./assets/react.svg"
+import Header from "./components/Header";
+import ReactIcon from "./components/ReactIcon";
 
 function App(){
-  const [isClicked, setIsClicked] = React.useState(false)
-
-  const styleClass = 'fast'
-
-  function handleClick(){
-    {isClicked ? setIsClicked(false) : setIsClicked(true)}
-  }
-
-return(
-  <div>
-    <header>
-      <div>
-        <h1>Ready to Code</h1>
-      </div>
-  </header>
+  return(
     <div>
-      <img className={`img ${isClicked ? styleClass : undefined}`} src={ico} alt="React" onClick={handleClick}/>
+      <Header />
+      <div className="icontainer">
+        <ReactIcon />
+      </div>
     </div>
-  </div>
-)
-}
+  )}
 
 export default App;
