@@ -2,7 +2,6 @@ import React from "react";
 
 import Header from "./components/Header";
 import ReactIcon from "./components/ReactIcon";
-import Button from "./components/Button";
 
 function App(){
   const [isClicked, setIsClicked] = React.useState(false)
@@ -12,13 +11,10 @@ function App(){
 }
 
   return(
-    <div>
+    <>
       <Header />
-      <div className="icontainer">
-        <ReactIcon Click={isClicked} />
-        <Button onClick={handleClick} Click={isClicked} />
-      </div>
-    </div>
+      <ReactIcon Click={isClicked} onClick={handleClick} />
+    </>
   )}
 
 export default App;

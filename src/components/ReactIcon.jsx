@@ -1,11 +1,15 @@
 import React from 'react'
 
 import ico from './../assets/react.svg'
+import Button from './Button.jsx'
 
-export default function ReactIcon({Click}){
+export default function ReactIcon({Click, onClick}){
     const styleClass = 'fast'
 
     return(
-        <img className={`img ${Click ? styleClass : undefined}`} src={ico} alt="React"/>
+        <div className='icontainer'>
+            <img className={`img ${Click ? styleClass : undefined}`} src={ico} alt="React"/>
+            <Button onClick={onClick} Click={Click} />
+        </div>
     )
 }
