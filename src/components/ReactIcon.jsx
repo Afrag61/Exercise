@@ -7,9 +7,13 @@ export default function ReactIcon({Click, onClick}){
     const styleClass = 'fast'
 
     return(
-        <div className='icontainer'>
-            <img className={`img ${Click ? styleClass : undefined}`} src={ico} alt="React"/>
-            <Button onClick={onClick} Click={Click} />
-        </div>
+        <>
+            <div className='icontainer'>
+                <img className={`img ${Click ? styleClass : undefined}`} src={ico} alt="React"/>
+            </div>
+            <div className='icontainer'>
+                <Button onClick={onClick} Click={Click} />
+            </div>
+        </>
     )
 }
