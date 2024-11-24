@@ -8,11 +8,13 @@ export default function ReactIcon({isSelected, onClick}){
 
     return(
         <>
-            <div className='icontainer'>
-                <img className={`img ${isSelected ? styleClass : undefined}`} src={ico} alt="React"/>
-            </div>
-            <div className='icontainer'>
-                <Button onClick={onClick} isSelected={isSelected} />
+            <div className='reactcontainer'>
+                <div>
+                    <img className={`img ${isSelected ? styleClass : undefined}`} src={ico} alt="React"/>
+                </div>
+                <div>
+                    <Button onClick={onClick} isSelected={isSelected} />
+                </div>
             </div>
         </>
     )
