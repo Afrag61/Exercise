@@ -1,19 +1,34 @@
-export default function Form() {
+ import React from "react";
+ 
+ const Form = React.forwardRef(function Form({}, ref) {
+    const name = React.useRef()
+    const email = React.useRef()
+
+    React.useImperativeHandle(ref, () => {
+        return{
+            clear(){
+                name.current.value = ''
+                email.current.value = ''
+            }
+        }
+    })
+
     return (
-      <form>
+      <form ref={ref}>
         <p>
           <label>Name</label>
-          <input type="text" />
+          <input ref={name} type="text" />
         </p>
   
         <p>
           <label>Email</label>
-          <input type="email" />
+          <input ref={email} type="email" />
         </p>
         <p id="actions">
           <button>Save</button>
         </p>
       </form>
     );
-  }
+  })
   
+  export default Form;
