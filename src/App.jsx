@@ -1,17 +1,23 @@
+import { useState } from 'react';
+
 import Toast from './Toast.jsx';
 
 function App() {
+  const [isVisible, setIsVisible] = useState()
+
   function handleEnrol() {
     // Todo: Show toast
-
+    setIsVisible(true)
     setTimeout(() => {
       // Todo: hide toast
+      setIsVisible(false)
     }, 3000);
   }
 
   return (
     <div id="app">
       {/* Todo: Render <Toast /> component (conditionally) here */}
+      {isVisible && <Toast message="Done !" />}
       <article>
         <h2>React Course</h2>
         <p>
