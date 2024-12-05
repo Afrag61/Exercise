@@ -9,17 +9,17 @@ import ReactIcon from "./components/ReactIcon";
 function App(){
   const [selectedIndex, setSelectedIndex] = useState([])
   const [number, setNumber] = useState(0)
-  const [istrue, setistrue] = useState(false)
+  const [isTrue, setIsTrue] = useState(false)
   const indexArray = Array.apply(null, Array(number)).map(() => {});
   const changeNumber = useRef()
   const warn = 'warn' ;
 
   function handleChange(){
     if(+changeNumber.current.value < 5 && +changeNumber.current.value >= 0){
-      setistrue(false)
+      setIsTrue(false)
       setNumber(+changeNumber.current.value)
     }else{
-      setistrue(true)
+      setIsTrue(true)
       setNumber(0)
     }
   }
@@ -37,9 +37,9 @@ function App(){
       <Header />
       <div className="inputcontainer">
         <p>
-          Enter Number of Icons <p className={`limit ${istrue ? warn : undefined}`}>(Max 4):</p>
+          Enter Number of Icons <p className={`limit ${isTrue ? warn : undefined}`}>(Max 4):</p>
         </p>
-        <input className={istrue ? warn : undefined} ref={changeNumber} onChange={handleChange} type="number" />
+        <input className={isTrue ? warn : undefined} ref={changeNumber} onChange={handleChange} type="number" />
       </div>
       <div className="container">
         {indexArray.map((item, index) => {
