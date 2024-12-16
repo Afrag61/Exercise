@@ -78,6 +78,10 @@ input{
   color: #00d8ff;
 }
 
+input:focus{
+  outline: none;
+}
+
 div{
   display: flex;
   flex-flow: column wrap;
