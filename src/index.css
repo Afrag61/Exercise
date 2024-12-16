@@ -16,10 +16,8 @@ body {
   font-family: "Silkscreen", sans-serif;
   font-weight: 700;
   font-style: normal;
-  /* background: linear-gradient(#000000,#000000,#101116,#171a1b); */
   background-color: #2e2e2e;
   color: #00d8ff;
-  /* border-bottom: 1px solid #00d8ff; */
 }
 
 #root{
@@ -46,21 +44,23 @@ h1{
   border-bottom: 1px solid #00d8ff;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  align-items: center;
+  gap: 10px;
 }
 
 p{
   display: flex;
   flex-flow: row nowrap;
-  margin-bottom: 0;
-  margin-top: 35px;
-  margin-right: 10px;
+  gap: 10px;
+  margin: 0;
+  padding: 22px 0;
 }
 
 .limit{
   display: flex;
   flex-flow: row nowrap;
   margin: 0;
-  margin-left: 8px;
+  padding: 0;
 }
 
 .warn{
@@ -74,7 +74,7 @@ input{
   background-color: transparent;
   border: 1px solid #00d8ff;
   border-radius: 8px;
-  margin-top: 30px;
+  padding-left: 10px;
   color: #00d8ff;
 }
 
