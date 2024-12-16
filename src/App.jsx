@@ -1,60 +1,52 @@
-import React from "react";
+import {useState} from "react";
+import { useRef } from "react";
 
-export const counterReducer = (state, action) => {
-  if(action.type === 'INCREMENT'){
-    return{
-      count: state.count + 1
-    }
-  }
-  if(action.type === 'DECREMENT'){
-    return{
-      count: state.count - 1
-    }
-  }
-  if(action.type === 'RESET'){
-    return{
-      count: state.count = 0
+import Header from "./components/Header";
+import ReactIcon from "./components/ReactIcon";
+
+
+
+function App(){
+  const [selectedIndex, setSelectedIndex] = useState([])
+  const [number, setNumber] = useState(0)
+  const [isTrue, setIsTrue] = useState(false)
+  const indexArray = Array.apply(null, Array(number)).map(() => {});
+  const changeNumber = useRef()
+  const warn = 'warn' ;
+
+  function handleChange(){
+    if(+changeNumber.current.value < 5 && +changeNumber.current.value >= 0){
+      setIsTrue(false)
+      setNumber(+changeNumber.current.value)
+    }else{
+      setIsTrue(true)
+      setNumber(0)
     }
   }
 
-  return state
+  function handleSelect(index){
+    if(selectedIndex.includes(index)){
+      setSelectedIndex(prev => prev.filter(item => item !== index))
+    }else{
+      setSelectedIndex(prev => [...prev, index])
+    }
 }
 
-const App = () => {
-  const [counterState, dispatchCounterState] = React.useReducer(counterReducer,{
-    count: 0
-  })
-
-  const handleIncrement = () => {
-    dispatchCounterState({
-      type: 'INCREMENT'
-    })
-  }
-
-  const handleDecrement = () => {
-    dispatchCounterState({
-      type: 'DECREMENT'
-    })
-  }
-
-  const handleReset = () => {
-    dispatchCounterState({
-      type: 'RESET'
-    })
-  }
-
-
-  return (
-    <div id="app">
-      <h1>The (Final?) Counter</h1>
-      <p id="actions">
-        <button onClick={handleIncrement}>Increment</button>
-        <button onClick={handleDecrement}>Decrement</button>
-        <button onClick={handleReset}>Reset</button>
-      </p>
-      <p id="counter">{counterState.count}</p>
-    </div>
-  );
-}
+  return(
+    <>
+      <Header />
+      <div className="inputcontainer">
+        <p>
+          Enter Number of Icons <p className={`limit ${isTrue ? warn : undefined}`}>(Max 4):</p>
+        </p>
+        <input className={isTrue ? warn : undefined} ref={changeNumber} onChange={handleChange} type="number" />
+      </div>
+      <div className="container">
+        {indexArray.map((item, index) => {
+          return <ReactIcon isSelected={selectedIndex.includes(index)} onClick={() => handleSelect(index)} />
+        })}
+      </div>
+    </>
+  )}
 
 export default App;
